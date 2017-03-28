@@ -1,0 +1,10 @@
+TYPO3:
+  Neos:
+    typoScript:
+      autoInclude:
+        'WebExcess.MultiColumn': TRUE
+
+    userInterface:
+      translation:
+        autoInclude:
+          'WebExcess.MultiColumn': ['NodeTypes/*']

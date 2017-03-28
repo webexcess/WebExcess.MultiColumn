@@ -1,0 +1,23 @@
+{
+    "name": "webexcess/multicolumn",
+    "type": "typo3-flow-plugin",
+    "license": "MIT",
+    "description": "Expand the settings for the Neos MultiColumn",
+    "require": {
+        "typo3/neos-nodetypes": "^2.1"
+    },
+    "authors": [
+        {
+            "name": "webexcess GmbH",
+            "email": "neos+opensource@webexcess.ch",
+            "homepage": "https://github.com/webexcess",
+            "role": "Developer"
+        }
+    ],
+    "extra": {
+        "installer-name": "WebExcess.MultiColumn",
+        "neos": {
+            "package-key": "WebExcess.MultiColumn"
+        }
+    }
+}

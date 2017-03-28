@@ -1,0 +1,72 @@
+namespace: NodeTypes=TYPO3.Neos.NodeTypes
+namespace: TypoScript=TYPO3.TypoScript
+
+prototype(NodeTypes:MultiColumn) {
+	templatePath = 'resource://WebExcess.MultiColumn/Private/Templates/MultiColumn.html'
+
+	@context.isRoot = ${q(node).parent().parent().is('[instanceof TYPO3.Neos:Document]')}
+	@context.align = ${q(node).property('align') ? 'row-xs-' + q(node).property('align') : false}
+	@context.onlyImages = ${q(node).find('[instanceof TYPO3.Neos.NodeTypes:Image][image]').count() == q(node).find('[instanceof TYPO3.Neos:Content]').count() ? 'multicolumn-only-images' : false}
+	container = ${isRoot}
+
+	attributes.class = TypoScript:RawArray {
+		row = ${isRoot ? 'container' : 'row'}
+		align = ${align && !isRoot ? align : false}
+		onlyImages = ${onlyImages && !isRoot ? onlyImages : false}
+	}
+
+	attributesRow = TypoScript:Attributes {
+		class = TypoScript:RawArray {
+			row = 'row'
+			align = ${align}
+			onlyImages = ${onlyImages}
+		}
+	}
+	columns.iterationName = 'multiColumnIteration'
+}
+
+prototype(NodeTypes:MultiColumnItem) {
+	@context.layoutXS = ${q(node).parent().property('layoutXS')}
+	@context.layoutSM = ${q(node).parent().property('layout')}
+	@context.layoutMD = ${q(node).parent().property('layoutMD')}
+	@context.layoutLG = ${q(node).parent().property('layoutLG')}
+	@context.layoutXL = ${q(node).parent().property('layoutXL')}
+
+	attributes.class = TypoScript:RawArray {
+		num = ${'col-num-' + (multiColumnIteration.index + 1)}
+		xs = ${layoutXS ? 'col-xs-' + String.split(layoutXS, '-')[multiColumnIteration.index] : 'col-xs-12'}
+		sm = ${layoutSM ? 'col-sm-' + String.split(layoutSM, '-')[multiColumnIteration.index] : false}
+		md = ${layoutMD ? 'col-md-' + String.split(layoutMD, '-')[multiColumnIteration.index] : false}
+		lg = ${layoutLG ? 'col-lg-' + String.split(layoutLG, '-')[multiColumnIteration.index] : false}
+		xl = ${layoutXL ? 'col-xl-' + String.split(layoutXL, '-')[multiColumnIteration.index] : false}
+	}
+}
+
+prototype(WebExcess.Base:FourColumnItem) < prototype(NodeTypes:MultiColumnItem) {
+	@context.hasNoLayout = ${!layoutXS&&!layoutSM&&!layoutMD&&!layoutLG&&!layoutXL}
+	attributes.class {
+		xs = ${layoutXS ? 'col-xs-' + String.split(layoutXS, '-')[multiColumnIteration.index] : 'col-xs-12'}
+		sm = ${layoutSM ? 'col-sm-' + String.split(layoutSM, '-')[multiColumnIteration.index] : hasNoLayout ? 'col-sm-6' : false}
+		md = ${layoutMD ? 'col-md-' + String.split(layoutMD, '-')[multiColumnIteration.index] : hasNoLayout ? 'col-md-3' : false}
+		lg = ${layoutLG ? 'col-lg-' + String.split(layoutLG, '-')[multiColumnIteration.index] : false}
+		xl = ${layoutXL ? 'col-xl-' + String.split(layoutXL, '-')[multiColumnIteration.index] : false}
+	}
+}
+
+prototype(NodeTypes:FourColumn) {
+	columns.itemRenderer = WebExcess.Base:FourColumnItem
+}
+
+prototype(NodeTypes:OneColumn) < prototype(NodeTypes:MultiColumn) {
+	templatePath = 'resource://WebExcess.MultiColumn/Private/Templates/MultiColumn.html'
+
+	container = false
+	attributes.class = TypoScript:RawArray {
+		container = ${isRoot ? 'container' : false}
+		align = ${align ? align : false}
+	}
+	columns >
+	columns = ContentCollection {
+		nodePath = 'content'
+	}
+}
