@@ -1,4 +1,6 @@
 # WebExcess.MultiColumn Package for Neos CMS #
+[![Latest Stable Version](https://poser.pugx.org/webexcess/multicolumn/v/stable)](https://packagist.org/packages/webexcess/multicolumn)
+[![License](https://poser.pugx.org/webexcess/multicolumn/license)](https://packagist.org/packages/webexcess/multicolumn)
 
 Expand the settings for the Neos MultiColumn
 
