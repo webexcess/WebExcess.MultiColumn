@@ -1,15 +1,20 @@
-'TYPO3.Neos.NodeTypes:TwoColumn':
+
+'Neos.NodeTypes:TwoColumn':
   superTypes:
-    'WebExcess.MultiColumn:MixinTwoSM': TRUE
+    'WebExcess.MultiColumn:MixinTwoSM': true
   childNodes:
     column0:
-      constraints: &columnConstraints
+      constraints:
         nodeTypes:
-          'TYPO3.Neos.NodeTypes:TwoColumn': TRUE
-          'TYPO3.Neos.NodeTypes:ThreeColumn': FALSE
-          'TYPO3.Neos.NodeTypes:FourColumn': FALSE
+          'Neos.NodeTypes:TwoColumn': true
+          'Neos.NodeTypes:ThreeColumn': false
+          'Neos.NodeTypes:FourColumn': false
     column1:
-      constraints: *columnConstraints
+      constraints:
+        nodeTypes:
+          'Neos.NodeTypes:TwoColumn': true
+          'Neos.NodeTypes:ThreeColumn': false
+          'Neos.NodeTypes:FourColumn': false
   ui:
     inspector:
       groups:
@@ -17,22 +22,13 @@
           label: 'WebExcess.MultiColumn:NodeTypes.MixinScreen:groups.column'
   properties:
     layout:
-      defaultValue: '6-6'
+      defaultValue: 6-6
       ui:
         inspector:
           editorOptions:
             values:
-              50-50: ~
-              25-75: ~
-              75-25: ~
-              33-66: ~
-              66-33: ~
-
-# 'TYPO3.Neos.NodeTypes:TwoColumn':
-#     superTypes:
-#       'WebExcess.MultiColumn:MixinTwoXS': TRUE
-#       'WebExcess.MultiColumn:MixinTwoSM': TRUE
-#       'WebExcess.MultiColumn:MixinTwoMD': TRUE
-#       'WebExcess.MultiColumn:MixinTwoLG': TRUE
-#       'WebExcess.MultiColumn:MixinTwoXL': TRUE
-#       'WebExcess.MultiColumn:MixinAlign': TRUE
+              50-50: null
+              25-75: null
+              75-25: null
+              33-66: null
+              66-33: null

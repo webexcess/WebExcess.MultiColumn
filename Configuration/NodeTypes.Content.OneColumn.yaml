@@ -1,23 +1,23 @@
-'TYPO3.Neos.NodeTypes:OneColumn':
+
+'Neos.NodeTypes:OneColumn':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
+    'Neos.Neos:Content': true
   childNodes:
     content:
-      type: 'TYPO3.Neos:ContentCollection'
+      type: 'Neos.Neos:ContentCollection'
       constraints:
         nodeTypes:
-          'TYPO3.Neos.NodeTypes:OneColumn': FALSE
-          'TYPO3.Neos.NodeTypes:TwoColumn': TRUE
-          'TYPO3.Neos.NodeTypes:ThreeColumn': TRUE
-          'TYPO3.Neos.NodeTypes:FourColumn': TRUE
+          'Neos.NodeTypes:OneColumn': false
+          'Neos.NodeTypes:TwoColumn': true
+          'Neos.NodeTypes:ThreeColumn': true
+          'Neos.NodeTypes:FourColumn': true
   ui:
     label: 'WebExcess.MultiColumn:NodeTypes.OneColumn:ui.label'
     group: structure
     icon: icon-square-o
-    inlineEditable: TRUE
+    inlineEditable: true
     position: 100
-
-'TYPO3.Neos:ContentCollection':
+'Neos.Neos:ContentCollection':
   constraints:
     nodeTypes:
-      'TYPO3.Neos.NodeTypes:OneColumn' : FALSE
+      'Neos.NodeTypes:OneColumn': false

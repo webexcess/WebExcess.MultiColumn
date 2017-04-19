@@ -1,17 +1,26 @@
-'TYPO3.Neos.NodeTypes:ThreeColumn':
+
+'Neos.NodeTypes:ThreeColumn':
   superTypes:
-    'WebExcess.MultiColumn:MixinThreeSM': TRUE
+    'WebExcess.MultiColumn:MixinThreeSM': true
   childNodes:
     column0:
-      constraints: &columnConstraints
+      constraints:
         nodeTypes:
-          'TYPO3.Neos.NodeTypes:TwoColumn': FALSE
-          'TYPO3.Neos.NodeTypes:ThreeColumn': FALSE
-          'TYPO3.Neos.NodeTypes:FourColumn': FALSE
+          'Neos.NodeTypes:TwoColumn': false
+          'Neos.NodeTypes:ThreeColumn': false
+          'Neos.NodeTypes:FourColumn': false
     column1:
-      constraints: *columnConstraints
+      constraints:
+        nodeTypes:
+          'Neos.NodeTypes:TwoColumn': false
+          'Neos.NodeTypes:ThreeColumn': false
+          'Neos.NodeTypes:FourColumn': false
     column2:
-      constraints: *columnConstraints
+      constraints:
+        nodeTypes:
+          'Neos.NodeTypes:TwoColumn': false
+          'Neos.NodeTypes:ThreeColumn': false
+          'Neos.NodeTypes:FourColumn': false
   ui:
     inspector:
       groups:
@@ -19,32 +28,12 @@
           label: 'WebExcess.MultiColumn:NodeTypes.MixinScreen:groups.column'
   properties:
     layout:
-      defaultValue: '4-4-4'
+      defaultValue: 4-4-4
       ui:
         inspector:
           editorOptions:
             values:
-              '33-33-33': ~
-              '50-25-25': ~
-              '25-50-25': ~
-              '25-25-50': ~
-
-
-# 'TYPO3.Neos.NodeTypes:ThreeColumn':
-#     superTypes:
-#       'WebExcess.MultiColumn:MixinThreeXS': TRUE
-#       'WebExcess.MultiColumn:MixinThreeSM': TRUE
-#       'WebExcess.MultiColumn:MixinThreeMD': TRUE
-#       'WebExcess.MultiColumn:MixinThreeLG': TRUE
-#       'WebExcess.MultiColumn:MixinThreeXL': TRUE
-#       'WebExcess.MultiColumn:MixinAlign': TRUE
-
-# With 2 Rows
-# 'TYPO3.Neos.NodeTypes:ThreeColumn':
-#     superTypes:
-#       'WebExcess.MultiColumn:MixinThreeXS2Row': TRUE
-#       'WebExcess.MultiColumn:MixinThreeSM2Row': TRUE
-#       'WebExcess.MultiColumn:MixinThreeMD2Row': TRUE
-#       'WebExcess.MultiColumn:MixinThreeLG2Row': TRUE
-#       'WebExcess.MultiColumn:MixinThreeXL2Row': TRUE
-#       'WebExcess.MultiColumn:MixinAlign': TRUE
+              33-33-33: null
+              50-25-25: null
+              25-50-25: null
+              25-25-50: null
