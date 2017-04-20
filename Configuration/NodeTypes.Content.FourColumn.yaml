@@ -1,11 +1,11 @@
-'TYPO3.Neos.NodeTypes:FourColumn':
+'Neos.NodeTypes:FourColumn':
   childNodes:
     column0:
       constraints: &columnConstraints
         nodeTypes:
-          'TYPO3.Neos.NodeTypes:TwoColumn': FALSE
-          'TYPO3.Neos.NodeTypes:ThreeColumn': FALSE
-          'TYPO3.Neos.NodeTypes:FourColumn': FALSE
+          'Neos.NodeTypes:TwoColumn': FALSE
+          'Neos.NodeTypes:ThreeColumn': FALSE
+          'Neos.NodeTypes:FourColumn': FALSE
     column1:
       constraints: *columnConstraints
     column2:
@@ -27,7 +27,7 @@
               '25-25-25-25': ~
 
 
-# 'TYPO3.Neos.NodeTypes:FourColumn':
+# 'Neos.NodeTypes:FourColumn':
 #     superTypes:
 #       'WebExcess.MultiColumn:MixinFourXS': TRUE
 #       'WebExcess.MultiColumn:MixinFourSM': TRUE
@@ -37,7 +37,7 @@
 #       'WebExcess.MultiColumn:MixinAlign': TRUE
 
 # With 2 Rows
-# 'TYPO3.Neos.NodeTypes:FourColumn':
+# 'Neos.NodeTypes:FourColumn':
 #     superTypes:
 #       'WebExcess.MultiColumn:MixinFourXS2Row': TRUE
 #       'WebExcess.MultiColumn:MixinFourSM2Row': TRUE
