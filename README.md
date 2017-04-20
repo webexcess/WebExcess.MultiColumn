@@ -4,8 +4,15 @@
 
 Expand the settings for the Neos MultiColumn
 
-## Composer
-### Installation
+## Compatibility and Maintenance
+WebExcess.MultiColumn is currently being maintained for Neos 2.3 LTS and Neos 3.x.
+
+| Neos Version | WebExcess.MultiColumn Version | Maintained |
+|--------------|-------------------------------|------------|
+| Neos 3.x     | 2.x                           | YES        |
+| Neos 2.3 LTS | 1.x                           | YES        |
+
+## Installation
 ```
 composer require webexcess/multicolumn
 ```
