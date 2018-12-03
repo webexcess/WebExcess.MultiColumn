@@ -1,0 +1,32 @@
+prototype(WebExcess.MultiColumn:Break) < prototype(Neos.Neos:ContentComponent) {
+    renderer = Neos.Fusion:Tag {
+        attributes.class = Neos.Fusion:RawArray {
+            element = ${node.context.inBackend ? 'col-break' : false}
+            width = 'w-100'
+
+            hidden = Neos.Fusion:RawArray {
+                xs = 'hidden-xs'
+                xs.@if.props = ${q(node).property('show-xs') == false && !node.context.inBackend}
+
+                sm = 'hidden-sm'
+                sm.@if.props = ${q(node).property('show-sm') == false && !node.context.inBackend}
+
+                md = 'hidden-md'
+                md.@if.props = ${q(node).property('show-md') == false && !node.context.inBackend}
+
+                lg = 'hidden-lg'
+                lg.@if.props = ${q(node).property('show-lg') == false && !node.context.inBackend}
+
+                xl = 'hidden-xl'
+                xl.@if.props = ${q(node).property('show-xl') == false && !node.context.inBackend}
+
+                @process.string = ${Array.join(value, ' ')}
+            }
+        }
+        content = Neos.Fusion:Tag {
+            tagName = 'span'
+            content = ${WebExcessI18nBackend.translate(Neos.Rendering.labelForNodeType(node.nodeType.name))}
+            @if.isBackend = ${node.context.inBackend ? true : false}
+        }
+    }
+}

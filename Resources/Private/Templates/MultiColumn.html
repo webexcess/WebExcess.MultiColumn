@@ -1,6 +1,0 @@
-{namespace fusion=Neos\Fusion\ViewHelpers}
-<div{attributes -> f:format.raw()}>
-	<f:if condition="{container}"><div{attributesRow -> f:format.raw()}></f:if>
-	<fusion:render path="columns" />
-	<f:if condition="{container}"></div></f:if>
-</div>

@@ -1,0 +1,24 @@
+WebExcess.MultiColumn:Column:
+  superTypes:
+    Neos.Neos:Content: true
+    WebExcess.MultiColumn:Mixin.Column.Width: true
+    WebExcess.MultiColumn:Mixin.Column.Offset: true
+    WebExcess.Label:Show: true
+  childNodes:
+    column:
+      type: 'WebExcess.MultiColumn:ContentCollection.Column'
+  ui:
+    label: i18n
+    icon: 'fas fa-columns'
+
+WebExcess.MultiColumn:Constraint.Column.Allowed:
+  abstract: true
+
+WebExcess.MultiColumn:ContentCollection.Column:
+  superTypes:
+    Neos.Neos:ContentCollection: true
+  constraints:
+    nodeTypes:
+      '*': false
+      Neos.Neos:Content: false
+      WebExcess.MultiColumn:Constraint.Column.Allowed: true

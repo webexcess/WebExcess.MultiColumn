@@ -1,0 +1,51 @@
+prototype(WebExcess.MultiColumn:Column) < prototype(Neos.Neos:ContentComponent) {
+    renderer = Neos.Fusion:Tag {
+        attributes.class = Neos.Fusion:RawArray {
+            element = 'column'
+
+            width = Neos.Fusion:RawArray {
+                xs = ${q(node).property('width') == 'col' ? 'col' : 'col-' + q(node).property('width')}
+                xs.@if.props = ${q(node).property('width')}
+
+                sm = ${q(node).property('width-sm') == 'col' ? 'col-sm' : 'col-sm-' + q(node).property('width-sm')}
+                sm.@if.props = ${q(node).property('width-sm')}
+
+                md = ${q(node).property('width-md') == 'col' ? 'col-md' : 'col-md-' + q(node).property('width-md')}
+                md.@if.props = ${q(node).property('width-md')}
+
+                lg = ${q(node).property('width-lg') == 'col' ? 'col-lg' : 'col-lg-' + q(node).property('width-lg')}
+                lg.@if.props = ${q(node).property('width-lg')}
+
+                xl = ${q(node).property('width-xl') == 'col' ? 'col-xl' : 'col-xl-' + q(node).property('width-xl')}
+                xl.@if.props = ${q(node).property('width-xl')}
+
+                @process.string = ${Array.join(value, ' ')}
+            }
+
+            offset = Neos.Fusion:RawArray {
+                xs = ${'offset-' + (q(node).property('offset') == 'reset' ? '0' : q(node).property('offset'))}
+                xs.@if.props = ${q(node).property('offset')}
+
+                sm = ${'offset-sm-' + (q(node).property('offset-sm') == 'reset' ? '0' : q(node).property('offset-sm'))}
+                sm.@if.props = ${q(node).property('offset-sm')}
+
+                md = ${'offset-md-' + (q(node).property('offset-md') == 'reset' ? '0' : q(node).property('offset-md'))}
+                md.@if.props = ${q(node).property('offset-md')}
+
+                lg = ${'offset-lg-' + (q(node).property('offset-lg') == 'reset' ? '0' : q(node).property('offset-lg'))}
+                lg.@if.props = ${q(node).property('offset-lg')}
+
+                xl = ${'offset-xl-' + (q(node).property('offset-xl') == 'reset' ? '0' : q(node).property('offset-xl'))}
+                xl.@if.props = ${q(node).property('offset-xl')}
+
+                @process.string = ${Array.join(value, ' ')}
+            }
+        }
+        content = Neos.Neos:ContentCollection {
+            attributes.class = Neos.Fusion:RawArray {
+                inner = 'column-inner'
+            }
+            nodePath = 'column'
+        }
+    }
+}

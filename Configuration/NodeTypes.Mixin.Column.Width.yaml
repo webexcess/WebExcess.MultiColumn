@@ -1,0 +1,242 @@
+WebExcess.MultiColumn:Mixin.Column.Width:
+  abstract: true
+  superTypes:
+    WebExcess.MultiColumn:Mixin.Column.Width.All: true
+    WebExcess.MultiColumn:Mixin.Column.Width.SM: true
+    WebExcess.MultiColumn:Mixin.Column.Width.MD: true
+    WebExcess.MultiColumn:Mixin.Column.Width.LG: true
+    WebExcess.MultiColumn:Mixin.Column.Width.XL: true
+
+WebExcess.MultiColumn:Mixin.Column.Width.Group:
+  abstract: true
+  ui:
+    inspector:
+      groups:
+        width:
+          label: 'WebExcess.MultiColumn:NodeTypes.Column:groups.width'
+
+WebExcess.MultiColumn:Mixin.Column.Width.All:
+  abstract: true
+  superTypes:
+    WebExcess.MultiColumn:Mixin.Column.Width.Group: true
+  properties:
+    width:
+      type: string
+      ui:
+        label: 'WebExcess.MultiColumn:Main:size.all'
+        reloadPageIfChanged: true
+        inspector:
+          group: 'width'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: true
+            values:
+              col:
+                label: 'col'
+              1:
+                label: 'col-1'
+              2:
+                label: 'col-2'
+              3:
+                label: 'col-3'
+              4:
+                label: 'col-4'
+              5:
+                label: 'col-5'
+              6:
+                label: 'col-6'
+              7:
+                label: 'col-7'
+              8:
+                label: 'col-8'
+              9:
+                label: 'col-9'
+              10:
+                label: 'col-10'
+              11:
+                label: 'col-11'
+              12:
+                label: 'col-12'
+              auto:
+                label: 'col-auto'
+
+WebExcess.MultiColumn:Mixin.Column.Width.SM:
+  abstract: true
+  superTypes:
+    WebExcess.MultiColumn:Mixin.Column.Width.Group: true
+  properties:
+    width-sm:
+      type: string
+      ui:
+        label: 'WebExcess.MultiColumn:Main:size.sm'
+        reloadPageIfChanged: true
+        inspector:
+          group: 'width'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: true
+            values:
+              col:
+                label: 'col-sm'
+              1:
+                label: 'col-sm-1'
+              2:
+                label: 'col-sm-2'
+              3:
+                label: 'col-sm-3'
+              4:
+                label: 'col-sm-4'
+              5:
+                label: 'col-sm-5'
+              6:
+                label: 'col-sm-6'
+              7:
+                label: 'col-sm-7'
+              8:
+                label: 'col-sm-8'
+              9:
+                label: 'col-sm-9'
+              10:
+                label: 'col-sm-10'
+              11:
+                label: 'col-sm-11'
+              12:
+                label: 'col-sm-12'
+              auto:
+                label: 'col-sm-auto'
+
+WebExcess.MultiColumn:Mixin.Column.Width.MD:
+  abstract: true
+  superTypes:
+    WebExcess.MultiColumn:Mixin.Column.Width.Group: true
+  properties:
+    width-md:
+      type: string
+      defaultValue: 'col'
+      ui:
+        label: 'WebExcess.MultiColumn:Main:size.md'
+        reloadPageIfChanged: true
+        inspector:
+          group: 'width'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: true
+            values:
+              col:
+                label: 'col-md'
+              1:
+                label: 'col-md-1'
+              2:
+                label: 'col-md-2'
+              3:
+                label: 'col-md-3'
+              4:
+                label: 'col-md-4'
+              5:
+                label: 'col-md-5'
+              6:
+                label: 'col-md-6'
+              7:
+                label: 'col-md-7'
+              8:
+                label: 'col-md-8'
+              9:
+                label: 'col-md-9'
+              10:
+                label: 'col-md-10'
+              11:
+                label: 'col-md-11'
+              12:
+                label: 'col-md-12'
+              auto:
+                label: 'col-md-auto'
+
+WebExcess.MultiColumn:Mixin.Column.Width.LG:
+  abstract: true
+  superTypes:
+    WebExcess.MultiColumn:Mixin.Column.Width.Group: true
+  properties:
+    width-lg:
+      type: string
+      ui:
+        label: 'WebExcess.MultiColumn:Main:size.lg'
+        reloadPageIfChanged: true
+        inspector:
+          group: 'width'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: true
+            values:
+              col:
+                label: 'col-lg'
+              1:
+                label: 'col-lg-1'
+              2:
+                label: 'col-lg-2'
+              3:
+                label: 'col-lg-3'
+              4:
+                label: 'col-lg-4'
+              5:
+                label: 'col-lg-5'
+              6:
+                label: 'col-lg-6'
+              7:
+                label: 'col-lg-7'
+              8:
+                label: 'col-lg-8'
+              9:
+                label: 'col-lg-9'
+              10:
+                label: 'col-lg-10'
+              11:
+                label: 'col-lg-11'
+              12:
+                label: 'col-lg-12'
+              auto:
+                label: 'col-lg-auto'
+
+WebExcess.MultiColumn:Mixin.Column.Width.XL:
+  abstract: true
+  superTypes:
+    WebExcess.MultiColumn:Mixin.Column.Width.Group: true
+  properties:
+    width-xl:
+      type: string
+      ui:
+        label: 'WebExcess.MultiColumn:Main:size.xl'
+        reloadPageIfChanged: true
+        inspector:
+          group: 'width'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: true
+            values:
+              col:
+                label: 'col-xl'
+              1:
+                label: 'col-xl-1'
+              2:
+                label: 'col-xl-2'
+              3:
+                label: 'col-xl-3'
+              4:
+                label: 'col-xl-4'
+              5:
+                label: 'col-xl-5'
+              6:
+                label: 'col-xl-6'
+              7:
+                label: 'col-xl-7'
+              8:
+                label: 'col-xl-8'
+              9:
+                label: 'col-xl-9'
+              10:
+                label: 'col-xl-10'
+              11:
+                label: 'col-xl-11'
+              12:
+                label: 'col-xl-12'
+              auto:
+                label: 'col-xl-auto'

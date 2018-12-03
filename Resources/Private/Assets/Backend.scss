@@ -1,0 +1,82 @@
+.column-element-backend {
+	@mixin make-col-offset-backend($size, $columns: $grid-columns, $gutter-width: $grid-gutter-width) {
+		$num: $size / $columns;
+
+		margin-left: if($num == 0, $gutter-width / 2 !important, calc(#{percentage($num)} + #{$gutter-width / 2}) !important);
+	}
+
+	@mixin make-col-backend($size, $columns: $grid-columns, $gutter-width: $grid-gutter-width) {
+		max-width: calc(#{percentage($size / $columns)} - #{$gutter-width});
+	}
+
+	@each $breakpoint in map-keys($grid-breakpoints) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		@for $i from 1 through $grid-columns {
+			.column.col#{$infix}-#{$i} {
+				padding-left: 0;
+				padding-right: 0;
+				margin-left: $grid-gutter-width / 2;
+				margin-right: $grid-gutter-width / 2;
+			}
+		}
+
+		.column.col#{$infix},
+		.column.col#{$infix}-auto {
+			padding-left: 0;
+			padding-right: 0;
+			margin-left: $grid-gutter-width / 2;
+			margin-right: $grid-gutter-width / 2;
+		}
+
+		@include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+			@for $i from 1 through $grid-columns {
+				.column.col#{$infix}-#{$i} {
+					@include make-col-backend($i, $grid-columns);
+
+					padding-left: 0;
+					padding-right: 0;
+					margin-left: $grid-gutter-width / 2;
+					margin-right: $grid-gutter-width / 2;
+				}
+			}
+
+			@for $i from 0 through ($grid-columns - 1) {
+				@if not ($infix == "" and $i == 0) {
+					.column.offset#{$infix}-#{$i} {
+						@include make-col-offset-backend($i, $grid-columns);
+					}
+				}
+			}
+		}
+	}
+}
+
+.col-break {
+	position: relative;
+	margin: $grid-gutter-width $grid-gutter-width / 2;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+
+	&::after {
+		content: '';
+		position: absolute;
+		width: calc(100% - #{$grid-gutter-width});
+		height: 1px;
+		top: 50%;
+		left: 50%;
+		background-color: $body-color;
+		transform: translateX(-50%) translateY(-50%);
+	}
+
+	span {
+		line-height: 1;
+		white-space: nowrap;
+		position: relative;
+		z-index: 1;
+		background-color: $white;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}

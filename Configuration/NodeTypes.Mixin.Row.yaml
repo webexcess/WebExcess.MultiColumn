@@ -1,0 +1,167 @@
+WebExcess.MultiColumn:Mixin.Row.Dialog:
+  abstract: true
+  ui:
+    creationDialog:
+      elements:
+        count:
+          type: string
+          defaultValue: '2'
+          ui:
+            label: 'WebExcess.MultiColumn:NodeTypes.Row:creationDialog.count'
+            editor: 'Neos.Neos/Inspector/Editors/TextFieldEditor'
+          validation:
+            Neos.Neos/Validation/IntegerValidator: true
+            Neos.Neos/Validation/NumberRangeValidator:
+              minimum: 1
+
+WebExcess.MultiColumn:Mixin.Row.Alignment:
+  abstract: true
+  superTypes:
+    WebExcess.MultiColumn:Mixin.Row.Alignment.All: true
+    WebExcess.MultiColumn:Mixin.Row.Alignment.SM: true
+    WebExcess.MultiColumn:Mixin.Row.Alignment.MD: true
+    WebExcess.MultiColumn:Mixin.Row.Alignment.LG: true
+    WebExcess.MultiColumn:Mixin.Row.Alignment.XL: true
+
+WebExcess.MultiColumn:Mixin.Row.Alignment.Group:
+  abstract: true
+  ui:
+    inspector:
+      groups:
+        alignment:
+          label: 'WebExcess.MultiColumn:NodeTypes.Row:groups.alignment'
+
+WebExcess.MultiColumn:Mixin.Row.Alignment.All:
+  abstract: true
+  superTypes:
+    WebExcess.MultiColumn:Mixin.Row.Alignment.Group: true
+  properties:
+    alignment:
+      type: string
+      ui:
+        label: 'WebExcess.MultiColumn:Main:size.all'
+        reloadPageIfChanged: true
+        inspector:
+          group: 'alignment'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: true
+            values:
+              start:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.start'
+              center:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.center'
+              end:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.end'
+              around:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.around'
+              between:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.between'
+
+WebExcess.MultiColumn:Mixin.Row.Alignment.SM:
+  abstract: true
+  superTypes:
+    WebExcess.MultiColumn:Mixin.Row.Alignment.Group: true
+  properties:
+    alignment-sm:
+      type: string
+      ui:
+        label: 'WebExcess.MultiColumn:Main:size.sm'
+        reloadPageIfChanged: true
+        inspector:
+          group: 'alignment'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: true
+            values:
+              start:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.start'
+              center:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.center'
+              end:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.end'
+              around:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.around'
+              between:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.between'
+
+WebExcess.MultiColumn:Mixin.Row.Alignment.MD:
+  abstract: true
+  superTypes:
+    WebExcess.MultiColumn:Mixin.Row.Alignment.Group: true
+  properties:
+    alignment-md:
+      type: string
+      ui:
+        label: 'WebExcess.MultiColumn:Main:size.md'
+        reloadPageIfChanged: true
+        inspector:
+          group: 'alignment'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: true
+            values:
+              start:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.start'
+              center:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.center'
+              end:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.end'
+              around:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.around'
+              between:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.between'
+
+WebExcess.MultiColumn:Mixin.Row.Alignment.LG:
+  abstract: true
+  superTypes:
+    WebExcess.MultiColumn:Mixin.Row.Alignment.Group: true
+  properties:
+    alignment-lg:
+      type: string
+      ui:
+        label: 'WebExcess.MultiColumn:Main:size.lg'
+        reloadPageIfChanged: true
+        inspector:
+          group: 'alignment'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: true
+            values:
+              start:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.start'
+              center:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.center'
+              end:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.end'
+              around:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.around'
+              between:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.between'
+
+WebExcess.MultiColumn:Mixin.Row.Alignment.XL:
+  abstract: true
+  superTypes:
+    WebExcess.MultiColumn:Mixin.Row.Alignment.Group: true
+  properties:
+    alignment-xl:
+      type: string
+      ui:
+        label: 'WebExcess.MultiColumn:Main:size.xl'
+        reloadPageIfChanged: true
+        inspector:
+          group: 'alignment'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: true
+            values:
+              start:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.start'
+              center:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.center'
+              end:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.end'
+              around:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.around'
+              between:
+                label: 'WebExcess.MultiColumn:NodeTypes.Row:properties.alignment.selectBoxEditor.values.between'

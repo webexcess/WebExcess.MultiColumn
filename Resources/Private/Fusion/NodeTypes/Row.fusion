@@ -1,0 +1,36 @@
+prototype(WebExcess.MultiColumn:Row) < prototype(Neos.Neos:ContentComponent) {
+    elementNode = ${node}
+
+    renderer = Neos.Fusion:Tag {
+        attributes.class = Neos.Fusion:RawArray {
+            element = 'column-element'
+            backend = ${node.context.inBackend ? 'column-element-backend' : false}
+            count = ${'columns-count-' + q(node).children('row').children().count()}
+        }
+        content = Neos.Neos:ContentCollection {
+            attributes.class = Neos.Fusion:RawArray {
+                row = 'row'
+
+                alignment = Neos.Fusion:RawArray {
+                    xs = ${'justify-content-' + q(props.elementNode).property('alignment')}
+                    xs.@if.props = ${q(props.elementNode).property('alignment')}
+
+                    sm = ${'justify-content-sm-' + q(props.elementNode).property('alignment-sm')}
+                    sm.@if.props = ${q(props.elementNode).property('alignment-sm')}
+
+                    md = ${'justify-content-md-' + q(props.elementNode).property('alignment-md')}
+                    md.@if.props = ${q(props.elementNode).property('alignment-md')}
+
+                    lg = ${'justify-content-lg-' + q(props.elementNode).property('alignment-lg')}
+                    lg.@if.props = ${q(props.elementNode).property('alignment-lg')}
+
+                    xl = ${'justify-content-xl-' + q(props.elementNode).property('alignment-xl')}
+                    xl.@if.props = ${q(props.elementNode).property('alignment-xl')}
+
+                    @process.string = ${Array.join(value, ' ')}
+                }
+            }
+            nodePath = 'row'
+        }
+    }
+}
