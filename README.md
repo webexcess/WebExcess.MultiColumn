@@ -20,6 +20,16 @@ composer require webexcess/multicolumn
 
 ## Configuration
 
+### Restricted content
+
+To allow your content elements to be inserted in a column, you have to add the following to your NodeType:
+
+```
+Your.Package:NodeType:
+  superTypes:
+    WebExcess.MultiColumn:Constraint.Column.Allowed: true
+```
+
 ### Row dialog
 
 When inserting a row, 2 columns are inserted by default. To improve the user experience, the `WebExcess.MultiColumn:Mixin.Row.Dialog` can be added. This will ask for the number of columns when inserting.
