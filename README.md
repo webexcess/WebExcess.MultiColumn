@@ -4,7 +4,7 @@
 
 Bootstrap grid for Neos CMS
 
-![WebExcess.MultiColumn](Documentation/preview.gif?raw=true "WebExcess.MultiColumn")
+![WebExcess.MultiColumn](Documentation/preview.gif "WebExcess.MultiColumn")
 
 ## Compatibility and Maintenance
 WebExcess.MultiColumn is currently being maintained for Neos 2.3 LTS and Neos 3.x.
