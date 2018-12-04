@@ -4,21 +4,12 @@ prototype(WebExcess.MultiColumn:Break) < prototype(Neos.Neos:ContentComponent) {
             element = ${node.context.inBackend ? 'col-break' : false}
             width = 'w-100'
 
-            hidden = Neos.Fusion:RawArray {
-                xs = 'hidden-xs'
-                xs.@if.props = ${q(node).property('show-xs') == false && !node.context.inBackend}
-
-                sm = 'hidden-sm'
-                sm.@if.props = ${q(node).property('show-sm') == false && !node.context.inBackend}
-
-                md = 'hidden-md'
-                md.@if.props = ${q(node).property('show-md') == false && !node.context.inBackend}
-
-                lg = 'hidden-lg'
-                lg.@if.props = ${q(node).property('show-lg') == false && !node.context.inBackend}
-
-                xl = 'hidden-xl'
-                xl.@if.props = ${q(node).property('show-xl') == false && !node.context.inBackend}
+            show = Neos.Fusion:RawArray {
+                xs = ${q(node).property('show-xs') ? 'd-block' : 'd-none'}
+                sm = ${q(node).property('show-sm') ? 'd-sm-block' : 'd-sm-none'}
+                md = ${q(node).property('show-md') ? 'd-md-block' : 'd-md-none'}
+                lg = ${q(node).property('show-lg') ? 'd-lg-block' : 'd-lg-none'}
+                xl = ${q(node).property('show-xl') ? 'd-xl-block' : 'd-xl-none'}
 
                 @process.string = ${Array.join(value, ' ')}
             }
