@@ -11,6 +11,7 @@ WebExcess.MultiColumn is currently being maintained for Neos 2.3 LTS and Neos 3.
 
 | Neos Version | WebExcess.MultiColumn Version | Maintained |
 |--------------|-------------------------------|------------|
+| Neos 5.x     | 4.x                           | YES        |
 | Neos 4.x     | 3.x                           | YES        |
 | Neos 3.x     | 2.x                           | NO         |
 | Neos 2.3 LTS | 1.x                           | NO         |

@@ -18,9 +18,9 @@
         }
     ],
     "require": {
-        "neos/neos": "~4.0",
-        "flowpack/nodetemplates": "~1.0.0",
-        "webexcess/label": "~1.0"
+        "neos/neos": "~5.0",
+        "flowpack/nodetemplates": "~1.1.0",
+        "webexcess/label": "~2.0"
     },
     "extra": {
         "installer-name": "WebExcess.MultiColumn",
