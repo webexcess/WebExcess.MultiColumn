@@ -17,6 +17,7 @@
             "email": "samuel.hauser@webexcess.ch"
         }
     ],
+    "abandoned": "jvmtech/multicolumn",
     "require": {
         "neos/neos": "~5.0",
         "flowpack/nodetemplates": "~1.1.0",
