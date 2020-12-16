@@ -7,14 +7,15 @@ Bootstrap grid for Neos CMS
 ![WebExcess.MultiColumn](Documentation/preview.gif "WebExcess.MultiColumn")
 
 ## Compatibility and Maintenance
-WebExcess.MultiColumn is currently being maintained for Neos 4.x and Neos 5.x.
+The current versions are running absolutely fine and Future versions are maintained by [Jung von Matt TECH](https://github.com/jvm-tech/JvMTECH.MultiColumn).
 
-| Neos Version | WebExcess.MultiColumn Version | Maintained |
-|--------------|-------------------------------|------------|
-| Neos 5.x     | 4.x                           | YES        |
-| Neos 4.x     | 3.x                           | YES        |
-| Neos 3.x     | 2.x                           | NO         |
-| Neos 2.3 LTS | 1.x                           | NO         |
+| Neos Version | WebExcess.MultiColumn Version                                          | Maintained |
+|--------------|------------------------------------------------------------------------|------------|
+| Neos 7.x     | [JvMTECH.MultiColumn](https://github.com/jvm-tech/JvMTECH.MultiColumn) | YES        |
+| Neos 5.x     | 4.x                                                                    | YES        |
+| Neos 4.x     | 3.x                                                                    | YES        |
+| Neos 3.x     | 2.x                                                                    | NO         |
+| Neos 2.3 LTS | 1.x                                                                    | NO         |
 
 ## Installation
 ```
