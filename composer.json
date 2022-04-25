@@ -20,7 +20,7 @@
     "abandoned": "jvmtech/multicolumn",
     "require": {
         "neos/neos": "~4.0",
-        "flowpack/nodetemplates": "~1.0.0",
+        "flowpack/nodetemplates": "~1.1.0",
         "webexcess/label": "~1.0"
     },
     "extra": {
